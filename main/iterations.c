@@ -85,9 +85,9 @@ void fase_de_conexao(void *param)
             //ESP_LOGW("ota_state", ".");
             //printf("%s", ".");
             gpio_set_level(BLINK_GPIO, 0);
-            vTaskDelay(100 / portTICK_PERIOD_MS);
+            vTaskDelay(50 / portTICK_PERIOD_MS);
             gpio_set_level(BLINK_GPIO, 1);
-            vTaskDelay(1000 / portTICK_PERIOD_MS);
+            vTaskDelay(1100 / portTICK_PERIOD_MS);
         } 
 
         else
