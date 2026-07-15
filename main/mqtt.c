@@ -53,6 +53,11 @@ static void mqtt_task_handler(void *handler_args, esp_event_base_t base, int32_t
         strcat(mqtt_connected_payload, MQTT_CLIENT_ID);
 
         esp_mqtt_client_publish(*mqtt_client_local, MQTT_TOPIC_PUBLISH, mqtt_connected_payload, 0, 1, 0);
+
+        vTaskDelay(500 / portTICK_PERIOD_MS);
+
+        ota_validation_checker();
+
         break;
     
     case MQTT_EVENT_ERROR:
